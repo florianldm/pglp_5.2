@@ -24,9 +24,36 @@ public abstract class Base {
     public static void drop(final Connection c) {
         try {
             Statement s = c.createStatement();
+            dropPersonnel(s);
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
 
+    /**
+     * Supprime la table Personnel.
+     * @param s le statement.
+     * @throws SQLException .
+     */
+    private static void dropPersonnel(final Statement s) throws SQLException {
+        try {
+            s.execute("DROP TABLE Personnel");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Création table Personnel.
+     * @param c connexion à la BD.
+     * @throws SQLException .
+     */
+    private static void createPersonnel(final Connection c) throws SQLException {
+        try {
+            Statement s = c.createStatement();
+            s.execute("CREATE TABLE Personnel ('Nom VARCHAR(40), Prenom VARCHAR(40), Naissance DATE'");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }
