@@ -9,12 +9,19 @@ import java.sql.Statement;
  * Création BD.
  */
 public abstract class Base {
+    /** Connexion avec BD. */
+    private static Connection c;
 
     /**
      * Gestion de la base de données.
+     * Etablissement de la connexion.
      */
     public static void create() throws SQLException {
-        DriverManager.getConnection("jdbc:derby:bd; create = true");
+        try {
+            c = DriverManager.getConnection("jdbc:derby:bd; create = true");
+        } catch (SQLException s) {
+            s.printStackTrace();
+        }
     }
 
     /**
