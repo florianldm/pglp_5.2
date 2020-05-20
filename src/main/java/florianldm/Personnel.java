@@ -135,6 +135,21 @@ public final class Personnel implements Composant, Serializable {
         return this.nom;
     }
 
+    /**
+     * Getter Prenom.
+     * @return Prenom.
+     */
+    public String getPrenom() {
+        return this.prenom;
+    }
+
+    /**
+     * Getter naissance.
+     * @return LocalDate.
+     */
+    public LocalDate getNaissance() {
+        return naissance;
+    }
 
     @Override
     public void afficheNom() {

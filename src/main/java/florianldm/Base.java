@@ -42,7 +42,7 @@ public abstract class Base {
      * @param s le statement.
      * @throws SQLException .
      */
-    private static void dropPersonnel(final Statement s) throws SQLException {
+    public static void dropPersonnel(final Statement s) throws SQLException {
         try {
             s.execute("DROP TABLE Personnel");
         } catch (SQLException e) {
@@ -55,10 +55,37 @@ public abstract class Base {
      * @param c connexion à la BD.
      * @throws SQLException .
      */
-    private static void createPersonnel(final Connection c) throws SQLException {
+    public static void createPersonnel(final Connection c) throws SQLException {
         try {
             Statement s = c.createStatement();
             s.execute("CREATE TABLE Personnel ('Nom VARCHAR(40), Prenom VARCHAR(40), Naissance DATE'");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Suppression table Groupe.
+     * @param s le statement.
+     * @throws SQLException .
+     */
+    public static void dropGroupe(final Statement s) throws SQLException {
+        try {
+            s.execute("DROP TABLE Groupe");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Création table Groupe.
+     * @param c connexion à la BD.
+     * @throws SQLException .
+     */
+    public static void createGroupe(final Connection c) throws SQLException {
+        try {
+            Statement s = c.createStatement();
+            s.execute("CREATE TABLE Groupe ('Nom VARCHAR(40), Nom_P VARCHAR(40)");
         } catch (SQLException e) {
             e.printStackTrace();
         }

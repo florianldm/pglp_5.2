@@ -94,4 +94,12 @@ public class Groupe implements Composant, Serializable {
     public void setNom(final String nom1) {
         this.nom = nom1;
     }
+
+    /**
+     * Getter nom du groupe.
+     * @return nom du groupe.
+     */
+    public String getNom() {
+        return nom;
+    }
 }

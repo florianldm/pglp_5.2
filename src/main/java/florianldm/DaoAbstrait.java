@@ -1,10 +1,11 @@
 package florianldm;
 
 import java.sql.Connection;
+import java.sql.SQLException;
 
 public abstract class DaoAbstrait<T> {
     /** Pour connexion à la BD. */
-    private Connection c;
+    protected Connection c;
 
     /**
      * Constructeur.
@@ -26,20 +27,20 @@ public abstract class DaoAbstrait<T> {
      * @param t à sauvegarder.
      * @return T.
      */
-    public abstract T save(T t);
+    public abstract T save(T t) throws SQLException;
 
     /**
      * Méthode update.
      * @param t à mettre à jour.
      * @return T.
      */
-    public abstract T update(T t);
+    public abstract T update(T t) throws SQLException;
 
     /**
      * Méthode delete.
      * @param t à supprimer.
      * @return T.
      */
-    public abstract  T delete(T t);
+    public abstract  T delete(T t) throws SQLException;
 
 }
