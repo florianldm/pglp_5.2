@@ -20,6 +20,14 @@ public class Groupe implements Composant, Serializable {
     }
 
     /**
+     * Constructeur avec nom.
+     */
+    public Groupe(final String nom1) {
+        c = new ArrayList();
+        this.nom = nom1;
+    }
+
+    /**
      * Ajout d'un personnel dans le groupe.
      * @param comp composant.
      */

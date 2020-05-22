@@ -1,9 +1,6 @@
 package florianldm;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
+import java.util.*;
 
 public class GroupeDao implements Dao<Groupe> {
     /** Liste de groupes. */
@@ -44,8 +41,24 @@ public class GroupeDao implements Dao<Groupe> {
      */
     @Override
     public void update(final Groupe groupe, final String[] params) {
-        groupe.setNom(Objects.requireNonNull(params[0], "Le nom ne peut pas être nul"));
-        groupes.add(groupe);
+        //groupe.setNom(Objects.requireNonNull(params[0], "Le nom ne peut pas être nul"));
+        //groupes.add(groupe);
+        int index = 0;
+        int ok = 0;
+        for (Iterator i = this.groupes.iterator(); i.hasNext();) {
+            Object objet = i.next();
+            Groupe g = (Groupe) objet;
+            if(g.getNom().equals(params[0])) {
+                ok = 1;
+                break;
+            }
+            index ++;
+        }
+
+        if(ok == 1) {
+            groupes.remove(index);
+            groupes.add(groupe);
+        }
     }
 
     /**
