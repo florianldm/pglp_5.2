@@ -22,12 +22,15 @@ public class PersonnelDaoJDBC extends DaoAbstrait {
     public Object get(final Object o) {
             Personnel p = (Personnel) o;
             Personnel p1 = null;
-            String nom_p = p.nom();
+            String nomp = p.nom();
             try {
-                PreparedStatement requete = c.prepareStatement("SELECT * FROM Personnel WHERE nom = ?");
-                requete.setString(1, nom_p);
+                PreparedStatement requete = c.prepareStatement(
+                        "SELECT * FROM Personnel WHERE nom = ?");
+                requete.setString(1, nomp);
                 ResultSet r = requete.executeQuery(requete.toString());
-                p1 = new Personnel.Builder(r.getString(1), r.getString(2), r.getDate(3).toLocalDate()).build();
+                p1 = new Personnel.Builder(r.getString(1),
+                        r.getString(2),
+                        r.getDate(3).toLocalDate()).build();
             } catch (SQLException s) {
                 s.printStackTrace();
             }
@@ -42,12 +45,14 @@ public class PersonnelDaoJDBC extends DaoAbstrait {
     @Override
     public Object save(final Object o) {
         Personnel p = (Personnel) o;
-        String nom_p = p.nom();
+        String nomp = p.nom();
         try {
-            PreparedStatement requete = c.prepareStatement("INSERT INTO Personnel VALUES (?, ?, ?)");
-            requete.setString(1, nom_p);
+            PreparedStatement requete = c.prepareStatement(
+                    "INSERT INTO Personnel VALUES (?, ?, ?)");
+            requete.setString(1, nomp);
             requete.setString(2, p.getPrenom());
-            Date d = (Date) Date.from(p.getNaissance().atStartOfDay(ZoneId.systemDefault()).toInstant());
+            Date d = (Date) Date.from(p.getNaissance().
+                    atStartOfDay(ZoneId.systemDefault()).toInstant());
             requete.setDate(3, d);
             ResultSet r = requete.executeQuery(requete.toString());
         } catch (SQLException s) {
@@ -64,14 +69,17 @@ public class PersonnelDaoJDBC extends DaoAbstrait {
     @Override
     public Object update(final Object o) {
         Personnel p = (Personnel) o;
-        String nom_p = p.nom();
+        String nomp = p.nom();
         try {
-            PreparedStatement requete = c.prepareStatement("UPDATE Personnel SET Nom = ?, Prenom = ?, Naissance = ? WHERE nom = ?");
-            requete.setString(1, nom_p);
+            PreparedStatement requete = c.prepareStatement(
+                    "UPDATE Personnel SET Nom = ?, Prenom = ?, "
+                            + "Naissance = ? WHERE nom = ?");
+            requete.setString(1, nomp);
             requete.setString(2, p.getPrenom());
-            Date d = (Date) Date.from(p.getNaissance().atStartOfDay(ZoneId.systemDefault()).toInstant());
+            Date d = (Date) Date.from(p.getNaissance().
+                    atStartOfDay(ZoneId.systemDefault()).toInstant());
             requete.setDate(3, d);
-            requete.setString(4, nom_p);
+            requete.setString(4, nomp);
             ResultSet r = requete.executeQuery(requete.toString());
         } catch (SQLException s) {
             s.printStackTrace();
@@ -87,10 +95,11 @@ public class PersonnelDaoJDBC extends DaoAbstrait {
     @Override
     public Object delete(final Object o) {
         Personnel p = (Personnel) o;
-        String nom_p = p.nom();
+        String nomp = p.nom();
         try {
-            PreparedStatement requete = c.prepareStatement("DELETE FROM Personnel WHERE Nom = ? AND Prenom = ?");
-            requete.setString(1, nom_p);
+            PreparedStatement requete = c.prepareStatement(
+                    "DELETE FROM Personnel WHERE Nom = ? AND Prenom = ?");
+            requete.setString(1, nomp);
             requete.setString(2, p.getPrenom());
             ResultSet r = requete.executeQuery(requete.toString());
         } catch (SQLException s) {

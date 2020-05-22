@@ -22,6 +22,7 @@ public class FabriqueDaoAbstraite {
 
     /**
      * Selon la valeur donnée en parametres.
+     * @param type type voulu (jdbc ou crud).
      * @return une fabrique CRUD ou JDBC.
      */
     public Object crudOrJDBC(final String type) {

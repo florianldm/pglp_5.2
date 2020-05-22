@@ -26,11 +26,11 @@ public abstract class Base {
 
     /**
      * Suppression des tables de la BD.
-     * @param c la connexion à la BD.
+     * @param c1 la connexion à la BD.
      */
-    public static void drop(final Connection c) {
+    public static void drop(final Connection c1) {
         try {
-            Statement s = c.createStatement();
+            Statement s = c1.createStatement();
             dropPersonnel(s);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -52,13 +52,15 @@ public abstract class Base {
 
     /**
      * Création table Personnel.
-     * @param c connexion à la BD.
+     * @param c1 connexion à la BD.
      * @throws SQLException .
      */
-    public static void createPersonnel(final Connection c) throws SQLException {
+    public static void createPersonnel(final Connection c1)
+            throws SQLException {
         try {
-            Statement s = c.createStatement();
-            s.execute("CREATE TABLE Personnel ('Nom VARCHAR(40), Prenom VARCHAR(40), Naissance DATE'");
+            Statement s = c1.createStatement();
+            s.execute("CREATE TABLE Personnel ('Nom VARCHAR(40),"
+                    + "Prenom VARCHAR(40), Naissance DATE'");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -79,13 +81,14 @@ public abstract class Base {
 
     /**
      * Création table Groupe.
-     * @param c connexion à la BD.
+     * @param c1 connexion à la BD.
      * @throws SQLException .
      */
-    public static void createGroupe(final Connection c) throws SQLException {
+    public static void createGroupe(final Connection c1) throws SQLException {
         try {
-            Statement s = c.createStatement();
-            s.execute("CREATE TABLE Groupe ('Nom VARCHAR(40), Nom_P VARCHAR(40)");
+            Statement s = c1.createStatement();
+            s.execute("CREATE TABLE Groupe "
+                    + "('Nom VARCHAR(40), Nom_P VARCHAR(40)");
         } catch (SQLException e) {
             e.printStackTrace();
         }

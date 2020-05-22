@@ -25,8 +25,8 @@ under the License.
     <language>en-us</language>
     <copyright>&#169;2020</copyright>
     <item>
-      <title>File: 15,
-             Errors: 70,
+      <title>File: 10,
+             Errors: 15,
              Warnings: 0,
              Infos: 0
       </title>
@@ -46,91 +46,21 @@ under the License.
           <tbody>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#florianldm.FabriqueDaoAbstraite.java">florianldm/FabriqueDaoAbstraite.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  2
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://maven.apache.org/checkstyle.html#florianldm.Dao.java">florianldm/Dao.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://maven.apache.org/checkstyle.html#florianldm.PersonnelDao.java">florianldm/PersonnelDao.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  3
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://maven.apache.org/checkstyle.html#florianldm.App.java">florianldm/App.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  10
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://maven.apache.org/checkstyle.html#florianldm.Personnel.java">florianldm/Personnel.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  5
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://maven.apache.org/checkstyle.html#florianldm.Composant.java">florianldm/Composant.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="http://maven.apache.org/checkstyle.html#florianldm.DaoAbstrait.java">florianldm/DaoAbstrait.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://maven.apache.org/checkstyle.html#florianldm.FabriqueDaoAbstraite.java">florianldm/FabriqueDaoAbstraite.java</a>
                 </td>
                 <td>
                   0
@@ -153,7 +83,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  5
+                  1
                 </td>
               </tr>
                           <tr>
@@ -167,7 +97,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  4
+                  1
                 </td>
               </tr>
                           <tr>
@@ -186,7 +116,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#florianldm.Base.java">florianldm/Base.java</a>
+                  <a href="http://maven.apache.org/checkstyle.html#florianldm.PersonnelDaoJDBC.java">florianldm/PersonnelDaoJDBC.java</a>
                 </td>
                 <td>
                   0
@@ -200,7 +130,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#florianldm.PersonnelDaoJDBC.java">florianldm/PersonnelDaoJDBC.java</a>
+                  <a href="http://maven.apache.org/checkstyle.html#florianldm.App.java">florianldm/App.java</a>
                 </td>
                 <td>
                   0
@@ -209,21 +139,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  16
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://maven.apache.org/checkstyle.html#florianldm.package-info.java">florianldm/package-info.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
+                  1
                 </td>
               </tr>
                           <tr>
@@ -251,7 +167,21 @@ under the License.
                   0
                 </td>
                 <td>
-                  17
+                  2
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://maven.apache.org/checkstyle.html#florianldm.Personnel.java">florianldm/Personnel.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
                 </td>
               </tr>
                       </tbody>

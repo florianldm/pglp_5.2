@@ -21,6 +21,7 @@ public class Groupe implements Composant, Serializable {
 
     /**
      * Constructeur avec nom.
+     * @param nom1 nom du groupe.
      */
     public Groupe(final String nom1) {
         c = new ArrayList();
@@ -65,7 +66,8 @@ public class Groupe implements Composant, Serializable {
      * @param file chemin vers le fichier.
      */
     public void serialize(final String file) {
-        try (ObjectOutputStream out = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(file)))) {
+        try (ObjectOutputStream out = new ObjectOutputStream(
+                new BufferedOutputStream(new FileOutputStream(file)))) {
             out.writeObject(this);
         } catch (IOException e) {
             e.printStackTrace();
@@ -79,7 +81,8 @@ public class Groupe implements Composant, Serializable {
      */
     public Groupe deserialize(final String file) {
         Groupe g = null;
-        try (ObjectInputStream in = new ObjectInputStream(new BufferedInputStream(new FileInputStream(file)))) {
+        try (ObjectInputStream in = new ObjectInputStream(
+                new BufferedInputStream(new FileInputStream(file)))) {
             g = (Groupe) in.readObject();
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();

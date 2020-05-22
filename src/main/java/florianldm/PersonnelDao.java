@@ -51,14 +51,14 @@ public class PersonnelDao implements Dao<Personnel> {
         for (Iterator i = this.personnels.iterator(); i.hasNext();) {
             Object objet = i.next();
             Personnel p = (Personnel) objet;
-            if(p.nom().equals(args[0])) {
+            if (p.nom().equals(args[0])) {
                 ok = 1;
                 break;
             }
-            index ++;
+            index++;
         }
 
-        if(ok == 1) {
+        if (ok == 1) {
             personnels.remove(index);
             personnels.add(personnel);
         }

@@ -20,7 +20,9 @@ public final class Personnel implements Composant, Serializable {
      * @param naissance1 date de naissance.
      * @param tel1 liste de tels.
      */
-    public Personnel(final String nom1, final String prenom1, final LocalDate naissance1, final ArrayList<String> tel1) {
+    public Personnel(final String nom1, final String prenom1,
+                     final LocalDate naissance1,
+                     final ArrayList<String> tel1) {
         this.nom = nom1;
         this.prenom = prenom1;
         this.naissance = naissance1;
@@ -56,7 +58,8 @@ public final class Personnel implements Composant, Serializable {
          * @param prenom1    perso.
          * @param naissance1 perso.
          */
-        public Builder(final String nom1, final String prenom1, final LocalDate naissance1) {
+        public Builder(final String nom1, final String prenom1,
+                       final LocalDate naissance1) {
             this.nom = nom1;
             this.prenom = prenom1;
             this.naissance = naissance1;
@@ -105,7 +108,8 @@ public final class Personnel implements Composant, Serializable {
      * @param file chemin vers le fichier.
      */
     public void serialize(final String file) {
-        try (ObjectOutputStream out = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(file)))) {
+        try (ObjectOutputStream out = new ObjectOutputStream(
+                new BufferedOutputStream(new FileOutputStream(file)))) {
             out.writeObject(this);
         } catch (IOException e) {
             e.printStackTrace();
@@ -119,7 +123,8 @@ public final class Personnel implements Composant, Serializable {
      */
     public Personnel deserialize(final String file) {
         Personnel p = null;
-        try (ObjectInputStream in = new ObjectInputStream(new BufferedInputStream(new FileInputStream(file)))) {
+        try (ObjectInputStream in = new ObjectInputStream(
+                new BufferedInputStream(new FileInputStream(file)))) {
             p = (Personnel) in.readObject();
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
